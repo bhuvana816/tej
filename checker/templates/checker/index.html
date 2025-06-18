@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Checker</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Check Strength</button>
+        </form>
+        {% if strength %}
+            <p class="result">Password Strength: <strong>{{ strength }}</strong></p>
+        {% endif %}
+    </div>
+</body>
+</html>
