@@ -3,8 +3,8 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'your-secret-key'
-DEBUG = True
+SECRET_KEY = 'your-secret-key'  # Replace with Render secret
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -34,5 +34,6 @@ DATABASES = {
     }
 }
 
+# ✅ Correct Static settings for Render
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'checker/static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
